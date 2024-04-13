@@ -30,7 +30,7 @@ const GamesContainer = () => {
 						<p>{game.name}</p>
 						<StyledGameAddToCart>
 							<button>Add to Cart</button>
-							<span>24.99€</span>
+							<span>{game.platforms[0].price}</span>
 						</StyledGameAddToCart>
 					</StyledGameCard>
 				))}
