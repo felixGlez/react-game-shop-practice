@@ -1,14 +1,6 @@
 import { PRODUCTS } from '../../constants/products';
-import {
-	StyledGameAddToCart,
-	StyledGameCard,
-	StyledGameCardTop,
-	StyledGameImg,
-	StyledGameTab,
-	StyledGameTabs,
-	StyledGames,
-	StyledGamesContainer
-} from './styles';
+import { StyledGames, StyledGamesContainer } from './styles';
+import GameCard from '../game-card/GameCard';
 
 const GamesContainer = () => {
 	return (
@@ -16,23 +8,7 @@ const GamesContainer = () => {
 			<h2>Games</h2>
 			<StyledGames>
 				{PRODUCTS.map(game => (
-					<StyledGameCard key={game.id}>
-						<StyledGameCardTop>
-							<StyledGameImg src={game.image} />
-							<StyledGameTabs>
-								{game.platforms.map(platform => (
-									<StyledGameTab key={platform.id}>
-										<p>{platform.name}</p>
-									</StyledGameTab>
-								))}
-							</StyledGameTabs>
-						</StyledGameCardTop>
-						<p>{game.name}</p>
-						<StyledGameAddToCart>
-							<button>Add to Cart</button>
-							<span>{game.platforms[0].price}</span>
-						</StyledGameAddToCart>
-					</StyledGameCard>
+					<GameCard key={game.id} game={game} />
 				))}
 			</StyledGames>
 		</StyledGamesContainer>
