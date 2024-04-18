@@ -5,7 +5,7 @@ import {
 	StyledSortContainer
 } from './styles';
 
-const Filters = ({ filters, setFilters }) => {
+const Filters = ({ handleCheck }) => {
 	return (
 		<StyledFiltersContainer>
 			<StyledPlatformContainer>
@@ -15,7 +15,7 @@ const Filters = ({ filters, setFilters }) => {
 						type='checkbox'
 						id='ps5'
 						name='ps5'
-						onChange={event => handleCheck(event, filters, setFilters)}
+						onChange={event => handleCheck(event)}
 					/>
 					<label htmlFor='ps5'>PS5</label>
 				</StyledCheckboxContainer>
@@ -24,7 +24,7 @@ const Filters = ({ filters, setFilters }) => {
 						type='checkbox'
 						id='ps4'
 						name='ps4'
-						onChange={event => handleCheck(event, filters, setFilters)}
+						onChange={event => handleCheck(event)}
 					/>
 					<label htmlFor='ps4'>PS4</label>
 				</StyledCheckboxContainer>
@@ -33,7 +33,7 @@ const Filters = ({ filters, setFilters }) => {
 						type='checkbox'
 						id='pc'
 						name='pc'
-						onChange={event => handleCheck(event, filters, setFilters)}
+						onChange={event => handleCheck(event)}
 					/>
 					<label htmlFor='pc'>PC</label>
 				</StyledCheckboxContainer>
@@ -42,7 +42,7 @@ const Filters = ({ filters, setFilters }) => {
 						type='checkbox'
 						id='xbox'
 						name='xbox'
-						onChange={event => handleCheck(event, filters, setFilters)}
+						onChange={event => handleCheck(event)}
 					/>
 					<label htmlFor='xbox'>Xbox</label>
 				</StyledCheckboxContainer>
@@ -57,13 +57,6 @@ const Filters = ({ filters, setFilters }) => {
 			</StyledSortContainer>
 		</StyledFiltersContainer>
 	);
-};
-
-const handleCheck = (event, filters, setFilters) => {
-	const { name, checked } = event.target;
-	// setFilters({ ...filters, [name]: !filters[name] });
-	// es equivalente, pero más óptimo esto:
-	setFilters({ ...filters, [name]: checked });
 };
 
 export default Filters;
