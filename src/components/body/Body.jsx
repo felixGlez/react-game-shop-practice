@@ -6,13 +6,13 @@ import { useFilters } from '../../hooks/useFilters';
 // LA APP SOLO TIENE 3 ESTADOS: EL DE LOS FILTROS, EL DE LAS TABS Y EL DEL CARRITO.
 
 const Body = () => {
-	const { filters, handleCheck } = useFilters();
+	const { filters, filteredGames, handleCheck, setSortBy } = useFilters();
 	console.log(filters);
 
 	return (
 		<StyledBody>
-			<Filters filters={filters} handleCheck={handleCheck} />
-			<GamesContainer />
+			<Filters handleCheck={handleCheck} setSortBy={setSortBy} />
+			<GamesContainer filteredGames={filteredGames} />
 		</StyledBody>
 	);
 };

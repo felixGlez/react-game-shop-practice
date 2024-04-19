@@ -1,13 +1,12 @@
-import { PRODUCTS } from '../../constants/products';
 import { StyledGames, StyledGamesContainer } from './styles';
 import GameCard from '../game-card/GameCard';
 
-const GamesContainer = () => {
+const GamesContainer = ({ filteredGames }) => {
 	return (
 		<StyledGamesContainer>
 			<h2>Games</h2>
 			<StyledGames>
-				{PRODUCTS.map(game => (
+				{filteredGames.map(game => (
 					<GameCard key={game.id} game={game} />
 				))}
 			</StyledGames>

@@ -5,7 +5,7 @@ import {
 	StyledSortContainer
 } from './styles';
 
-const Filters = ({ handleCheck }) => {
+const Filters = ({ handleCheck, setSortBy }) => {
 	return (
 		<StyledFiltersContainer>
 			<StyledPlatformContainer>
@@ -13,43 +13,43 @@ const Filters = ({ handleCheck }) => {
 				<StyledCheckboxContainer>
 					<input
 						type='checkbox'
-						id='ps5'
-						name='ps5'
+						id='PS5'
+						name='PS5'
 						onChange={event => handleCheck(event)}
 					/>
-					<label htmlFor='ps5'>PS5</label>
+					<label htmlFor='PS5'>PS5</label>
 				</StyledCheckboxContainer>
 				<StyledCheckboxContainer>
 					<input
 						type='checkbox'
-						id='ps4'
-						name='ps4'
+						id='PS4'
+						name='PS4'
 						onChange={event => handleCheck(event)}
 					/>
-					<label htmlFor='ps4'>PS4</label>
+					<label htmlFor='PS4'>PS4</label>
 				</StyledCheckboxContainer>
 				<StyledCheckboxContainer>
 					<input
 						type='checkbox'
-						id='pc'
-						name='pc'
+						id='PC'
+						name='PC'
 						onChange={event => handleCheck(event)}
 					/>
-					<label htmlFor='pc'>PC</label>
+					<label htmlFor='PC'>PC</label>
 				</StyledCheckboxContainer>
 				<StyledCheckboxContainer>
 					<input
 						type='checkbox'
-						id='xbox'
-						name='xbox'
+						id='Xbox'
+						name='Xbox'
 						onChange={event => handleCheck(event)}
 					/>
-					<label htmlFor='xbox'>Xbox</label>
+					<label htmlFor='Xbox'>Xbox</label>
 				</StyledCheckboxContainer>
 			</StyledPlatformContainer>
 			<StyledSortContainer>
 				<h2>Sort By</h2>
-				<select>
+				<select onChange={event => setSortBy(event.target.value)}>
 					<option value='0'>Default</option>
 					<option value='1'>Name</option>
 					<option value='2'>Release Date</option>
