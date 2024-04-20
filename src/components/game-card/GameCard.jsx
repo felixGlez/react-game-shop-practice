@@ -31,7 +31,7 @@ const GameCard = ({ game }) => {
 			<p>{game.name}</p>
 			<StyledGameAddToCart>
 				<button>Add to Cart</button>
-				<span>{game.platforms[tabs].price}</span>
+				<span>{game.platforms[tabs].price}€</span>
 			</StyledGameAddToCart>
 		</StyledGameCard>
 	);
